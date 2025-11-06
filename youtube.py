@@ -114,7 +114,15 @@ def play():
         
         #print("Stats enabled") 
         
-        movie_player = driver.find_element(by=By.ID, value='movie_player')
+        try:
+            movie_player = WebDriverWait(driver, 30).until(
+            EC.presence_of_element_located((By.ID, "movie_player"))
+        )   
+            print(f" run {start_time}-> YouTube player loaded")
+        except Exception:
+            print(f" run  {start_time}-> YouTube player not found after waiting")
+            driver.save_screenshot("debug_no_movie_player.png")
+            raise
         hover = ActionChains(driver).move_to_element(movie_player)
         hover.perform()
         ActionChains(driver).context_click(movie_player).perform()

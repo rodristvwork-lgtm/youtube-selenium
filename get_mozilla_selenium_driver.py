@@ -15,10 +15,12 @@ def fetch_arm64_geckodriver(version):
     url = "https://api.github.com/repos/mozilla/geckodriver/releases/latest"
     data = requests.get(url).json()
     driver_url = None
+    
     for asset in data["assets"]:
         if "linux-aarch64.tar.gz" in asset["browser_download_url"]:
             driver_url = asset["browser_download_url"]
             break
+        
     if not driver_url:
         raise RuntimeError(f"No ARM64 GeckoDriver found for current Firefox {version}")
 

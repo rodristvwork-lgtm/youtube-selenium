@@ -1,8 +1,13 @@
 # youtube-selenium
 Python Environment for Multi‑OS devices (Windows / Linux / Raspberry Pi)
 
-# reate a virtual environment in the project directory
-python -m venv -venv
+# Create a virtual environment in the project directory
+
+## For Windows
+ython -m venv -venv
+
+## For Linux / Raspberry 
+python3 -m venv .venv
 
 # work in env python (in directory) Windows
 .venv\Scripts\Activate.ps1

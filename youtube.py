@@ -60,21 +60,22 @@ def play():
     try:
         srv = webdriver.FirefoxService(os.path.join("driver", "geckodriver"))
         opt = webdriver.FirefoxOptions()
-        opt.add_argument('user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36')
+        opt.set_preference("general.useragent.override",
+                                "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+                                "(KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36")
         #opt.add_argument('--start-maximized')
         #opt.add_argument('--no-sandbox')
         #opt.add_argument('--user-data-dir /home/admin/Software/youtube-selenium/userData')
         #opt.add_argument('--profile-directory=Profile1')
-        opt.add_argument('--disable-gpu')
-        opt.add_argument('--disable-accelerated-2d-canvas')
-        opt.add_argument('--disable-blink-features=AutomationControlled')
-        opt.add_argument('--allow-running-insecure-content')
-        opt.add_experimental_option('excludeSwitches', ['enableAutomation'])
-        opt.add_experimental_option('useAutomationExtension', False)
-
-        exc = '/home/admin/Software/youtube-selenium/chromedriver/chromedriver'
+        opt.set_preference("layers.acceleration.disabled", True)
+        opt.set_preference("gfx.canvas.azure.accelerated", False)
+        opt.set_preference("dom.webdriver.enabled", False)
+        opt.set_preference('useAutomationExtension', False)
+        opt.set_preference("security.mixed_content.block_active_content", False)
+        opt.set_preference("security.mixed_content.block_display_content", False)
+        #exc = '/home/admin/Software/youtube-selenium/chromedriver/chromedriver'
         #opt.binary_location = '/home/admin/Software/youtube-selenium/chromedriver/chromedriver'
-        driver = webdriver.Chrome(service=srv, options=opt)
+        driver = webdriver.Firefox(service=srv, options=opt)
         time.sleep(3)
         driver.get(homepage)
         #consent_button = WebDriverWait(driver, 30).until(

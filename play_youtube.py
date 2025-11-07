@@ -78,6 +78,17 @@ def play():
         ActionChains(driver).context_click(movie_player).perform()
 
         time.sleep(2)
+        
+        j = 0
+        
+        while j < 10000:
+            try:
+                hover.perform()
+                stat_dict = {}
+                not_found_div_id = []
+            
+            except Exception as e:
+                    print(f"RUN: {start_time} | ts {int(time.time())} Error {traceback.format_exc()}")
 
     except Exception as e:
         print(f"RUN {start_time} -> Error: {traceback.format_exc()}")

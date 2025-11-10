@@ -62,16 +62,16 @@ def play():
         opt = webdriver.FirefoxOptions()
         opt.set_preference(
             "general.useragent.override",
-            "Mozilla/5.0 (X11; Linux x86_64; rv:131.0) Gecko/20100101 Firefox/131.0"
-        )
+             "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+                                "(KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36")
         #opt.add_argument('--start-maximized')
         #opt.add_argument('--no-sandbox')
         profile_path = "/home/situser/.mozilla/firefox/qnjqjqw5.default-release"
         opt.set_preference("profile", profile_path)
-        #opt.set_preference("layers.acceleration.disabled", True)
-        #opt.set_preference("gfx.canvas.azure.accelerated", False)
-        #opt.set_preference("dom.webdriver.enabled", False)
-        #opt.set_preference('useAutomationExtension', False)
+        opt.set_preference("layers.acceleration.disabled", True)
+        opt.set_preference("gfx.canvas.azure.accelerated", False)
+        opt.set_preference("dom.webdriver.enabled", False)
+        opt.set_preference('useAutomationExtension', False)
         opt.set_preference("security.mixed_content.block_active_content", False)
         opt.set_preference("security.mixed_content.block_display_content", False)
         #exc = '/home/admin/Software/youtube-selenium/chromedriver/chromedriver'

@@ -64,7 +64,7 @@ def play():
             "general.useragent.override",
              "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
                                 "(KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36")
-        #opt.add_argument('--start-maximized')
+        driver.maximize_window()
         #opt.add_argument('--no-sandbox')
         profile_path = "/home/situser/.mozilla/firefox/qnjqjqw5.default-release"
         opt.set_preference("profile", profile_path)

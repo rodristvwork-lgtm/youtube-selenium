@@ -64,7 +64,7 @@ def play():
             "general.useragent.override",
              "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
                                 "(KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36")
-        driver.maximize_window()
+        #opt.add_argument('--start-maximized')
         #opt.add_argument('--no-sandbox')
         profile_path = "/home/situser/.mozilla/firefox/qnjqjqw5.default-release"
         opt.set_preference("profile", profile_path)
@@ -77,6 +77,7 @@ def play():
         #exc = '/home/admin/Software/youtube-selenium/chromedriver/chromedriver'
         #opt.binary_location = '/home/admin/Software/youtube-selenium/chromedriver/chromedriver'
         driver = webdriver.Firefox(service=srv, options=opt)
+        driver.maximize_window()
         time.sleep(3)
         driver.get(homepage)
         #consent_button = WebDriverWait(driver, 30).until(

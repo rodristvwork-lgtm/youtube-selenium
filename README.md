@@ -1,22 +1,20 @@
-# youtube-selenium
-Python Environment for Multi‑OS devices (Windows / Linux / Raspberry Pi)
+# youtube-selenium Firefox
+Steps to install youtube buffer catcher using selenium with Firefox
 
-# Create a virtual environment in the project directory
-
-## For Windows
-ython -m venv -venv
-
-## For Linux / Raspberry 
+# Create Environment
 python3 -m venv .venv
 
-# work in env python (in directory) Windows
-.venv\Scripts\Activate.ps1
-
-# work in env python (in directory) Linux
+# Activate Environment Python
 source .venv/bin/activate
-
-# to deactivate
-deactivate
 
 # To install requirements
 pip install -r requirements.txt
+
+# Download driver
+python get_mozilla_selenium_driver.py
+
+# Run Youtube buffer catcher
+python youtube.py
+
+# Deactivate Environment
+deactivate

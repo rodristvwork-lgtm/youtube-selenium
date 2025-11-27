@@ -66,7 +66,7 @@ def play():
                                 "(KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36")
         #opt.add_argument('--start-maximized')
         #opt.add_argument('--no-sandbox')
-        profile_path = "/home/situser/.mozilla/firefox/qnjqjqw5.default-release"
+        profile_path = "/home/admin/.mozilla/firefox/d5vgq3rh.default-release"
         opt.set_preference("profile", profile_path)
         opt.set_preference("layers.acceleration.disabled", True)
         opt.set_preference("gfx.canvas.azure.accelerated", False)

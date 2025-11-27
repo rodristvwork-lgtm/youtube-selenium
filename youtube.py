@@ -125,7 +125,7 @@ def play():
             print(f" run  {start_time}-> YouTube player not found after waiting")
             driver.save_screenshot("debug_no_movie_player.png")
             raise
-        hover = ActionChains(driver).move_to_element(movie_player).perform()
+        ActionChains(driver).move_to_element(movie_player).perform()
 
         # Dispatch a JS right-click event
         driver.execute_script("""
@@ -201,6 +201,8 @@ def play():
             last_ts = 0.0
             last_buffer = 0.0
             last_res = ''
+            
+            hover = ActionChains(driver).move_to_element(movie_player)
             
             while j < 10000:
                 try:
